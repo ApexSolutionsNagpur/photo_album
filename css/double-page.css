@@ -1,0 +1,102 @@
+/* Basic sample */
+
+body{
+    overflow:hidden;
+    background-color:#000000;
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+}
+
+.flipbook-viewport{
+    display: flex; /* Use flexbox to center the page horizontally */
+    justify-content: center; /* Center the page horizontally */
+    align-items: center; /* Center the page vertically */
+}
+
+.flipbook-viewport .container{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex; /* Use flexbox to center the page horizontally */
+    justify-content: center; /* Center the page horizontally */
+    align-items: center; /* Center the page vertically */
+}
+
+.flipbook-viewport .flipbook{
+    width: 1200px;
+    height: 600px;
+}
+
+.flipbook-viewport .double{
+    width: 1200px;
+    height: 600px;
+    background-size: 100% 100%;
+}
+
+.flipbook-viewport .page{
+    /* width: 400px;
+    height: 400px; */
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: contain; /* Ensure the image fits within the container */
+    background-position: center; /* Center the image */
+}
+
+.flipbook .page{
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    -ms-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    -o-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.flipbook-viewport .page img{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+}
+
+.flipbook-viewport .shadow{
+    -webkit-transition: -webkit-box-shadow 0.5s;
+    -moz-transition: -moz-box-shadow 0.5s;
+    -o-transition: -webkit-box-shadow 0.5s;
+    -ms-transition: -ms-box-shadow 0.5s;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -o-box-shadow: 0 0 20px #ccc;
+    -ms-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
+}
+
+/* Change orientation for mobile devices */
+@media only screen and (max-width: 767px) {
+    body {
+        transform: rotate(90deg); /* Rotate the entire page 90 degrees */
+        transform-origin: top left; /* Set the rotation origin to top left */
+        width: 100vh; /* Set the width to viewport height */
+        height: 100vw; /* Set the height to viewport width */
+        overflow-x: hidden; /* Hide horizontal overflow */
+    }
+
+    .flipbook-viewport {
+        transform: rotate(-90deg); /* Rotate the flipbook viewport back to normal */
+        transform-origin: top left; /* Set the rotation origin to top left */
+    }
+
+	.flipbook-viewport .flipbook{
+		width: 600px;
+		height: 400px;
+	}
+	
+	.flipbook-viewport .double{
+		width: 600px;
+		height: 400px;
+		background-size: 100% 100%;
+	}
+}
